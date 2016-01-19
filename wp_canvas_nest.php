@@ -2,29 +2,22 @@
 /*
 Plugin Name: Canvas-Nest.js
 Plugin URI: https://github.com/aTool-org/canvas-nest-for-wp
-Description: A wordpress plugin for canvas-nest.js | 一个很炫酷网页背景效果（canvas-nest.js）的wordpress插件。
-Version: 1.0
+Description: [正版]A wordpress plugin for canvas-nest.js | 一个很炫酷网页背景效果（canvas-nest.js）的wordpress插件。
+Version: 1.0.0
 Author: aTool.org
 Author URI: http://www.aTool.org/
 License: MIT
 */
 
-if(!class_exists('WP_Canvas_Nest'))
-{
-	class WP_Canvas_Nest
-	{
+if(!class_exists('WP_Canvas_Nest')) {
+	class WP_Canvas_Nest {
 		/**
 		 * Construct the plugin object
 		 */
-		public function __construct()
-		{
+		public function __construct() {
 			// Initialize Settings
 			require_once(sprintf("%s/settings.php", dirname(__FILE__)));
 			$WP_Canvas_Nest_Settings = new WP_Canvas_Nest_Settings();
-
-			// Register custom post types
-			require_once(sprintf("%s/post-types/post_type_template.php", dirname(__FILE__)));
-			$Post_Type_Template = new Post_Type_Template();
 
 			$plugin = plugin_basename(__FILE__);
 			add_filter("plugin_action_links_$plugin", array( $this, 'plugin_settings_link' ));
@@ -33,22 +26,19 @@ if(!class_exists('WP_Canvas_Nest'))
 		/**
 		 * Activate the plugin
 		 */
-		public static function activate()
-		{
+		public static function activate() {
 			// Do nothing
 		} // END public static function activate
 
 		/**
 		 * Deactivate the plugin
 		 */
-		public static function deactivate()
-		{
+		public static function deactivate() {
 			// Do nothing
 		} // END public static function deactivate
 
 		// Add the settings link to the plugins page
-		function plugin_settings_link($links)
-		{
+		function plugin_settings_link($links) {
 			$settings_link = '<a href="options-general.php?page=WP_Canvas_Nest">Settings</a>';
 			array_unshift($links, $settings_link);
 			return $links;
