@@ -5,6 +5,10 @@ Online Demo: [http://www.atool.org/](http://www.atool.org/)
 
 ![screenshot/screenshot.png](screenshot/screenshot.png)
 
+**Plugin Admin Setting**
+
+![screenshot/plugin_admin.png](screenshot/plugin_admin.png)
+
 
 ## How to use?
 
