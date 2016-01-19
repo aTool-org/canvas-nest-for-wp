@@ -3,7 +3,7 @@ A wordpress plugin of [canvas-nest.js](https://github.com/aTool-org/canvas-nest.
 
 ## How to use?
 
-1. Download package from [release](https://github.com/aTool-org/canvas-nest-for-wp/releases)
+1. Download package from [WP_Canvas_Nest.zip](https://github.com/aTool-org/canvas-nest-for-wp/raw/master/WP_Canvas_Nest.zip)
 
 2. unzip the package, and put the folder into `wp-content\plugins` dir.
 
