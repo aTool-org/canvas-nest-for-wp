@@ -42,7 +42,6 @@ if(!class_exists('WP_Canvas_Nest_Settings')) {
                 $setting_count = get_option('cn_setting_count');
                 if ($setting_count === false)  $setting_count = '99';
                 $setting_zindex = get_option('cn_setting_zindex');
-                echo $setting_zindex;
                 if ($setting_zindex === false)  $setting_zindex = '-1';
                 echo "<script type='text/javascript' color='$setting_color' zIndex='$setting_zindex' opacity='$setting_opacity' count='$setting_count' src='//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js'></script>";
             }
