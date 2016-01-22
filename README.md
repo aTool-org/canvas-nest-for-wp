@@ -3,12 +3,6 @@ A wordpress plugin of [canvas-nest.js](https://github.com/aTool-org/canvas-nest.
 
 Online Demo: [http://www.atool.org/](http://www.atool.org/)
 
-![screenshot/screenshot.png](screenshot/screenshot.png)
-
-**Plugin Admin Setting**
-
-![screenshot/plugin_admin.png](screenshot/plugin_admin.png)
-
 
 ## How to use?
 
@@ -18,6 +12,14 @@ Online Demo: [http://www.atool.org/](http://www.atool.org/)
 
 3. refresh the admin page, click `OPEN` the plugin.
 
+
+## Screenshot
+
+![screenshot/screenshot.png](screenshot/screenshot.png)
+
+**Plugin Admin Setting**
+
+![screenshot/plugin_admin.png](screenshot/plugin_admin.png)
 
 ## Node
 
