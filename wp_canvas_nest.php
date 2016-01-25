@@ -3,7 +3,7 @@
 Plugin Name: Canvas-Nest.js
 Plugin URI: https://github.com/aTool-org/canvas-nest-for-wp
 Description: [正版]A wordpress plugin for canvas-nest.js | 一个很炫酷网页背景效果（canvas-nest.js）的wordpress插件。
-Version: 1.0.0
+Version: 1.0.1
 Author: aTool.org
 Author URI: http://www.aTool.org/
 License: MIT
