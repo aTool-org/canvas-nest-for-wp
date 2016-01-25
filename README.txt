@@ -10,6 +10,7 @@ License URI: https://github.com/aTool-org/canvas-nest-for-wp/blob/master/LICENSE
 
 [正版]A wordpress plugin for canvas-nest.js | 一个很炫酷网页背景效果（canvas-nest.js）的wordpress插件。
 
+
 == Description ==
 
 canvas-nest.js是github上一个很炫酷的开源项目，项目使用不到2kb的Javascript代码构造一个很炫酷的网页背景效果，项目地址为：https://github.com/aTool-org/canvas-nest.js
@@ -18,6 +19,7 @@ canvas-nest.js是github上一个很炫酷的开源项目，项目使用不到2kb
 
 项目代码简单，并且开源，更多信息可以访问：http://www.atool.org/ 。
 
+
 == Installation ==
 
 This section describes how to install the plugin and get it working.
@@ -25,9 +27,9 @@ This section describes how to install the plugin and get it working.
 e.g.
 
 1. Upload the plugin files to the `/wp-content/plugins/plugin-name` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
-1. Use the Settings->Plugin Name screen to configure the plugin
-1. (Make your instructions match the desired user flow for activating and installing your plugin. Include any steps that might be needed for explanatory purposes)
+2. Activate the plugin through the 'Plugins' screen in WordPress
+3. Use the Settings->Plugin Name screen to configure the plugin
+4. (Make your instructions match the desired user flow for activating and installing your plugin. Include any steps that might be needed for explanatory purposes)
 
 
 == Frequently Asked Questions ==
