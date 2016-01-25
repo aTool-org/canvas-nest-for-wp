@@ -17,6 +17,22 @@ if(!class_exists('WP_Canvas_Nest_Settings')) {
             if ($v) return true;
             return false;
         }
+
+        private function hex2rgb($hex) {
+            $hex = str_replace("#", "", $hex);
+
+            if(strlen($hex) == 3) {
+                $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+                $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+                $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+            } else {
+                $r = hexdec(substr($hex,0,2));
+                $g = hexdec(substr($hex,2,2));
+                $b = hexdec(substr($hex,4,2));
+            }
+            return array($r, $g, $b);
+        }
+
 		public function add_canvas_nest() {
             //判断当前页面是否开启
             //is_home 、 is_archive 、 is_singular 、 is_search 、 is_404
@@ -43,6 +59,11 @@ if(!class_exists('WP_Canvas_Nest_Settings')) {
                 if ($setting_count === false)  $setting_count = '99';
                 $setting_zindex = get_option('cn_setting_zindex');
                 if ($setting_zindex === false)  $setting_zindex = '-1';
+
+                if (strpos($setting_color, '#') === 0) {
+                    $setting_color = $this->hex2rgb($setting_color);
+                    $setting_color = join(',', $setting_color);
+                }
                 echo "<script type='text/javascript' color='$setting_color' zIndex='$setting_zindex' opacity='$setting_opacity' count='$setting_count' src='//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js'></script>";
             }
         }
@@ -73,7 +94,8 @@ if(!class_exists('WP_Canvas_Nest_Settings')) {
                 'WP_Canvas_Nest-section',
                 array(
                     'field' => 'cn_setting_color',
-                    'value' => '0,0,0'
+                    'value' => '0,0,0',
+                    'type' => 'color'
                 )
             );
             add_settings_field(
@@ -84,7 +106,8 @@ if(!class_exists('WP_Canvas_Nest_Settings')) {
                 'WP_Canvas_Nest-section',
                 array(
                     'field' => 'cn_setting_opacity',
-                    'value' => '0.5'
+                    'value' => '0.5',
+                    'type' => 'text'
                 )
             );
             add_settings_field(
@@ -95,7 +118,8 @@ if(!class_exists('WP_Canvas_Nest_Settings')) {
                 'WP_Canvas_Nest-section',
                 array(
                     'field' => 'cn_setting_count',
-                    'value' => '99'
+                    'value' => '99',
+                    'type' => 'number'
                 )
             );
             add_settings_field(
@@ -106,7 +130,8 @@ if(!class_exists('WP_Canvas_Nest_Settings')) {
                 'WP_Canvas_Nest-section',
                 array(
                     'field' => 'cn_setting_zindex',
-                    'value' => '-1'
+                    'value' => '-1',
+                    'type' => 'number'
                 )
             );
             
@@ -203,11 +228,12 @@ if(!class_exists('WP_Canvas_Nest_Settings')) {
          */
         public function settings_field_input_text($args) {
             $field = $args['field'];
+            $type = $args['type'];
             $value = get_option($field);
             if ($value === false) {
                 $value = $args['value'];
             }
-            echo sprintf('<input type="text" name="%s" id="%s" value="%s" />', $field, $field, $value);
+            echo sprintf('<input type="%s" name="%s" id="%s" value="%s" />', $type, $field, $field, $value);
         }
         
         /**
